@@ -1,0 +1,24 @@
+<! -- File name: index.ejs
+	  Author's name: Emma Hilborn
+	  Website name: http://emmavhilborn2.azurewebsites.net/
+	  Description: This is the view for the main or "home" page -->
+
+<%- include partials/header.ejs %>
+
+<div class="main">
+	<div class="page-header">
+			<h1><%= title %></h1>
+	</div>
+	<div class="jumbotron">
+	<div class = "container">
+		<div class="media-container">
+			<img class="media-object" src="images/Emma.jpg" alt="A photo of Emma." height="160" width="120">
+		</div>
+	</div>
+		<div class="container">
+			<p>Welcome to Emma's online portfolio!<br>Select an option to navigate to that page!</p>
+		</div>
+	</div>
+</div>
+
+<%- include partials/footer.ejs %>

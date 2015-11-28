@@ -1,0 +1,42 @@
+<!--
+  File name: index.ejs
+  Author's name: Emma Hilborn
+  Website name: http://emmavhilborn2.azurewebsites.net/
+  Description: This is the view for my business contacts home (or index) page
+-->
+
+<% include ../partials/header.ejs %>
+<div class="main">
+	<div class="page-header">
+			<h1><%= title %></h1>
+	</div>
+    <div class="container">
+      <div class="jumbotron">
+        <p> This is a list of all business contacts associated with Emma.</p>
+        <p><a href="/businessContacts/add">Add a contact</a> here.</p>
+        <% if (users.length > 0) { %>
+        <table class="table table-bordered table-striped table-hover">
+            <tr>
+                <th>Contact name:</th>
+                <th>Email:</th>
+                <th>Contact number:</th>
+                <th>Options:</th>
+            </tr>
+            <% for (var i=0; i < contacts.length; i++) { %>
+                <tr>
+                    <td><%= contacts[i].name %></td>
+                    <td><%= contacts[i].email %></td>
+                    <td><%= contacts[i].phone %></td>
+                    <td>
+                        <a href="/businessContacts/<%= contacts[i]._id %>" title="Edit" class="btn btn-primary">Edit</a>
+                        <a href="/businessContacts/delete/<%= contacts[i]._id %>" title="Delete" 
+                        onclick="return confirm('Are you sure you want to delete this?');" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            <% } %>   
+        </table>
+        <% } %>
+      </div>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>
