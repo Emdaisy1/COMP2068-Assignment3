@@ -1,0 +1,19 @@
+{
+  "name": "COMP2068-Assignment3",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Emdaisy1 <hilborn_emmav@live.ca>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Emdaisy1/COMP2068-Assignment3",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}

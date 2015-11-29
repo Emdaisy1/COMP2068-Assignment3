@@ -1,9 +1,9 @@
 {
-  "name": "COMP2068-Assignment1",
+  "name": "COMP2068-Assignment3",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
