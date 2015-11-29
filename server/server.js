@@ -8,8 +8,8 @@
 
 //Module dependencies
 
-var app = require('./app');
-var debug = require('debug')('COMP2068-Assignment2:server');
+var app = require('../app');
+var debug = require('debug')('COMP2068-Assignment3:server');
 var http = require('http');
 
 //Get port from environment and store in Express

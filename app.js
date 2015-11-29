@@ -20,22 +20,22 @@ var flash = require('connect-flash');
 var passport = require('passport');
 
 //Add database setup
-var DB = require('./config/db.js');
+var DB = require('./server/config/db.js');
 mongoose.connect(DB.url);
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Failed...');
 });
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var businessContacts = require('./routes/businessContacts');
+var routes = require('./server/routes/index');
+var users = require('./server/routes/users');
+var businessContacts = require('./server/routes/businessContacts');
 
 var app = express();
 
-require('./config/passport')(passport);
+require('./server/config/passport')(passport);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './server/views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
