@@ -11,6 +11,14 @@ var router = express.Router();
 
 var User = require('../models/user');
 
+//Create function to check if user is logged in or not (redirect them to login if not)
+function requireAuth(req, res, next){
+  if(!req.isAuthenticated()){
+    return res.redirect('/login');
+  }
+  next();
+}
+
 //Get home page
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home',
@@ -101,9 +109,9 @@ router.post('/register', passport.authenticate('local-registration', {
 }));
 
 //Show to do list page
-router.get('/toDoList', function (req, res, next) {
+router.get('/toDoList', requireAuth, function (req, res, next) {
 
-        res.render('toDoList/index', {
+        res.render('todos/index', {
             title: 'To Do List',
             displayName: req.user ? req.user.displayName : '',
             username: req.user ? req.user.username : '' 

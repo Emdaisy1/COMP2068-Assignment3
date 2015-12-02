@@ -29,7 +29,7 @@ mongoose.connection.on('error', function() {
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 var businessContacts = require('./server/routes/businessContacts');
-var todos = require('./server/routes/toDoList');
+var todos = require('./server/routes/todos');
 
 var app = express();
 
@@ -62,7 +62,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/businessContacts', businessContacts);
-app.use('/toDoList', todos);
+app.use('/todos', todos);
 
 
 //Catch 404 errors and forward to error handler
