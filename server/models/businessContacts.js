@@ -1,7 +1,7 @@
 /*
  * File name: businessContacts.js
  * Author's name: Emma Hilborn
- * Website name: http://emmavhilborn2.azurewebsites.net/
+ * Website name: http://emmavhilborn3.azurewebsites.net/
  * Description: This is the file that contains the schema for my business contacts model
  */
 

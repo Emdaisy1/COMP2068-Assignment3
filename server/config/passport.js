@@ -1,7 +1,7 @@
 /*
  * File name: passport.js
  * Author's name: Emma Hilborn
- * Website name: http://emmavhilborn2.azurewebsites.net/
+ * Website name: http://emmavhilborn3.azurewebsites.net/
  * Description: Sets up the passport strategy
  */
 

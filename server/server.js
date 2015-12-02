@@ -2,7 +2,7 @@
 
 /*
 * Author's name: Emma Hilborn
-* Website name: http://emmavhilborn2.azurewebsites.net/
+* Website name: http://emmavhilborn3.azurewebsites.net/
 * Description: This page contains the dependencies to run an http-server
 */
 

@@ -1,7 +1,7 @@
 /*
  * File name: index.js
  * Author's name: Emma Hilborn
- * Website name: http://emmavhilborn2.azurewebsites.net/
+ * Website name: http://emmavhilborn3.azurewebsites.net/
  * Description: This is the file that contains the express routes for all my "index" views
  */
 
@@ -99,6 +99,16 @@ router.post('/register', passport.authenticate('local-registration', {
     failureRedirect : '/register',
     failureFlash : true
 }));
+
+//Show to do list page
+router.get('/toDoList', function (req, res, next) {
+
+        res.render('toDoList/index', {
+            title: 'To Do List',
+            displayName: req.user ? req.user.displayName : '',
+            username: req.user ? req.user.username : '' 
+        });
+});
 
 module.exports = router;
 

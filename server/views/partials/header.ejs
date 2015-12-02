@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <! -- File name: header.ejs
 	  Author's name: Emma Hilborn
-	  Website name: http://emmavhilborn2.azurewebsites.net/
+	  Website name: http://emmavhilborn3.azurewebsites.net/
 	  Description: This is the header file that is used on each View -->
 	
 <html>
@@ -49,6 +49,12 @@
         <li>
           <% } %>
           <a href="/businessContacts">Business Contacts</a></li>
+          <% if(title == "To Do List" ) { %>
+        <li class="active">
+          <% } else { %>
+        <li>
+          <% } %>
+          <a href="/toDoList">To Do List</a></li>
         <li><a href="/logout">Logout</a></li>
         <% } else { %>
           <% if(title == "Register" ) { %>
