@@ -1,7 +1,7 @@
 /*
-* File name: index.ejs
+* File name: app.js
 * Author's name: Emma Hilborn
-* Website name: http://emmavhilborn2.azurewebsites.net/
+* Website name: http://emmavhilborn3.azurewebsites.net/
 * Description: This file configures all dependencies, etc for the page/application -->
 */
 
@@ -29,6 +29,7 @@ mongoose.connection.on('error', function() {
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
 var businessContacts = require('./server/routes/businessContacts');
+var todos = require('./server/routes/toDoList');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/businessContacts', businessContacts);
+app.use('/toDoList', todos);
 
 
 //Catch 404 errors and forward to error handler
@@ -70,7 +72,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-/*
+
 // Error handlers
 
 // development error handler
@@ -95,7 +97,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-*/
+
 
 
 module.exports = app;
