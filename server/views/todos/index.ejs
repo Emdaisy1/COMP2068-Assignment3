@@ -28,8 +28,8 @@
                             <span ng-show="editing[$index]">complete?</span>
                             <input type="checkbox" ng-model="todo.completed" ng-change="update($index)">
                             <span class="todos">
-                            <a ng-show="!editing[$index]" style="text-decoration:line-through;" href="#/{{todo._id}}" class="completed-{{todo.completed}}">{{todo.name}}</a></span>
-                            <a ng-show="completed" style="text-decoration:line-through;" href="#/{{todo._id}}" class="completed-{{todo.completed}}">{{todo.name}}</a></span>
+                            <a ng-show="!editing[$index]" style="text-decoration:line-through;" href="#/{{todo._id}}" class="completed-{{todo.completed}}">{{todo.name}}</a>
+                            <a ng-show="completed" style="text-decoration:line-through;" href="#/{{todo._id}}" class="completed-{{todo.completed}}">{{todo.name}}</a>
                             <a ng-show="!completed" style="text-decoration:line-through;" href="#/{{todo._id}}" class="completed-{{todo.completed}}">{{todo.name}}</a></span>
 
                             <input ng-show="editing[$index]" type="text" ng-model="todo.name" class="form-control">
