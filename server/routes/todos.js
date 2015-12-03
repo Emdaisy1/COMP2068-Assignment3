@@ -1,14 +1,20 @@
+/*
+ * File name: todos.js
+ * Author's name: Emma Hilborn
+ * Website name: http://emmavhilborn3.azurewebsites.net/
+ * Description: This is the file that contains the routing for all "todos" views
+ */
+
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
-//var mongoose = require('mongoose');
 var Todo = require('../models/todo.js');
 
-/* Utility functin to check if user is authenticatd */
+//Wrap all processes in a function to ensure user is logged in
 function requireAuth(req, res, next){
 
-  // check if the user is logged in
+  //Check to ensure user is logged in, if not, redirect to login page
   if(!req.isAuthenticated()){
     return res.redirect('/login');
   }
@@ -16,7 +22,7 @@ function requireAuth(req, res, next){
 }
 
 
-/* CREATE TODOS */
+//Creates a "todo" by "posting" to the json file
 router.post('/', requireAuth, function(req, res, next){
    Todo.create(req.body, function(err, post){
       if(err){
@@ -26,7 +32,7 @@ router.post('/', requireAuth, function(req, res, next){
    });
 });
 
-/* READ TODOS */
+//Reads all "todos" by  finding them in the json file
 router.get('/', requireAuth, function(req, res, next) {
   Todo.find(function(err,todos){
      if(err){return next(err);}
@@ -34,7 +40,7 @@ router.get('/', requireAuth, function(req, res, next) {
   });
 });
 
-/* READ /todos/id */
+//Fetches a particular "todo" from the json file, based on the id
 router.get('/:id', requireAuth, function(req,res, next) {
    Todo.findById(req.params.id, function(err,post){
       if(err) {
@@ -43,7 +49,7 @@ router.get('/:id', requireAuth, function(req,res, next) {
    });
 });
 
-/* UPDATE /todos/:id */
+//Updates a particular "todo" based on the id
 router.put('/:id', requireAuth, function(req,res, next){
    Todo.findByIdAndUpdate(req.params.id, req.body, function(err, post){
       if(err) {return next(err);}
@@ -51,7 +57,7 @@ router.put('/:id', requireAuth, function(req,res, next){
    }); 
 });
 
-/* DELETE /todos/:id */
+//Deletes a particular "todo" based on the id
 router.delete('/:id', requireAuth, function(req,res,next){
    Todo.findByIdAndRemove(req.params.id, req.body, function(err,post){
       if(err) {return next(err);}

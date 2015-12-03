@@ -108,7 +108,7 @@ router.post('/register', passport.authenticate('local-registration', {
     failureFlash : true
 }));
 
-//Show to do list page
+//Show to do list page, but require user to be logged in (if not logged in, will be sent to login page)
 router.get('/toDoList', requireAuth, function (req, res, next) {
 
         res.render('todos/index', {
