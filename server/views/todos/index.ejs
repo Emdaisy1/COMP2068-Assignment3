@@ -18,8 +18,6 @@
                 </div> <!-- panel-heading -->
                 <div class="panel-body">
                     <h4><span class="badge">{{remainingTodos()}}</span> Todos of <span class="badge">{{totalTodos()}}</span> remaining</h4>
-                    <h5>Search Todos:</h5>
-                    <input type="text" ng-model="search.name" id="searchTodo" placeholder="Todo to find" class="form-control">
 
                     <ul class="list-group">
                         <li class="list-group-item active">Current Todos</li>
@@ -27,7 +25,7 @@
                             <div class="btn-group">
                                 <button type="button" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-default "><i class="fa fa-edit"></i></button>
 
-                            </div> <!-- btn-group -->
+                            </div>
                             <span ng-show="editing[$index]">complete?</span>
                             <input type="checkbox" ng-model="todo.completed" ng-change="update($index)">
                             <span class="todos">
@@ -38,7 +36,7 @@
                                 <button type="button" ng-show="editing[$index]" ng-click="update($index)" class="btn btn-warning">update</button>
                                 <button type="button" ng-show="editing[$index]" ng-click="remove($index)" class="btn btn-danger">remove</button>
                                 <button type="button" ng-show="editing[$index]" ng-click="cancel($index)" class="btn btn-default">cancel</button>
-                            </div> <!-- btn-group -->
+                            </div>
                         </li>
                     </ul>
 
