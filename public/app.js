@@ -1,3 +1,10 @@
+/*
+* File name: app.js
+* Author's name: Emma Hilborn
+* Website name: http://emmavhilborn3.azurewebsites.net/
+* Description: This file configures all dependencies, etc for the angular functions of the "to dos" -->
+*/
+
 (function () {
     var mainModuleName = "app";
     var app = angular.module(mainModuleName, ['ngRoute', 'ngResource']);
